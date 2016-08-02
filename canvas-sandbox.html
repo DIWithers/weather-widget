@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<style type="text/css" media="screen">
+	canvas {
+		background-color: black;
+		border:  2px solid blue;
+	}
+</style>
+<canvas class="the-canvas" height="500px" width="1700px">
+<!-- Canvas cannot draw. Canvas is an empty pallete on which to draw. Our stuff is going here -->
+
+
+
+</canvas>
+
+
+<script type="text/javascript">
+
+	var canvas = document.getElementsByClassName("the-canvas")[0];
+	var context = canvas.getContext("2d");  //research webgl and webgl2 //context is the paintbrush
+
+function draw() {
+
+	// context.beginPath();
+	// context.fillStyle = "white";
+	// context.arc(375, 450, 50, 0.*Math.PI, 2*Math.PI); //first 2 # are center mark; the last math.PI is how complete the circle is(.5, 1, 1.5, 2)
+	// context.fill();
+
+	// context.beginPath();
+	// context.fillStyle = "white";
+	// context.arc(375, 365, 45, 0.*Math.PI, 2*Math.PI); //first 2 # are center mark; the last math.PI is how complete the circle is(.5, 1, 1.5, 2)
+	// context.fill();
+
+
+
+var x = 0;
+ var y = 0;
+ var radius = 10;
+ var endArc = 2;
+ var r = 0;
+ var g = 0;
+ var b = 0;
+
+//snowballs
+	
+
+
+}
+ 	context.fillStyle = "#" + r + g + b; //dynamically build fill style
+ 	context.beginPath();
+ 	context.clearRect(0, 0, 1500, 500);
+ 	context.arc(x, y, radius, 0, endArc * Math.PI);
+ 	context.fill();
+ 	x += 4;
+ 	// y += 2;
+ 	radius += 1;
+ 	endArc += .1;
+ 	r += 1;
+ 	b += 2;
+ 	g += 1;
+ }
+}
+
+
+ draw();
+
+
+
+
+
+
+	</script>
+
+
+
+
+</body>
+</html>

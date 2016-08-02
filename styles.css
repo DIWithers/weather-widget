@@ -1,0 +1,22 @@
+body {
+	background: url("images/landscape2.jpg");
+	/* background-size: 1000px 1000px; */
+	background-repeat:  no-repeat;
+}
+.container {
+	margin-top:  5%;
+	border: 1px solid black;
+	background-color: lightblue;
+	opacity: .8;
+	text-align: center;
+}
+.current-temp {
+	opacity: none;
+}
+#current-city {
+	margin-top: 25%;
+}
+#weather-icon img {
+	width: 100px;
+	margin-top: 10%;
+}

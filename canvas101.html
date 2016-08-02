@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<style type="text/css" media="screen">
+	canvas {
+		border:  2px solid blue;
+		background-color: lightblue;
+	}
+</style>
+<canvas class="the-canvas" height="500px" width="1500px">
+<!-- Canvas cannot draw. Canvas is an empty pallete on which to draw. Our stuff is going here -->
+
+
+
+</canvas>
+
+
+<script type="text/javascript">
+
+	var canvas = document.getElementsByClassName("the-canvas")[0];
+	var context = canvas.getContext("2d");  //research webgl and webgl2 //context is the paintbrush
+	console.log(context);
+
+	context.beginPath(); //Pen on paper, get ready to draw
+	context.moveTo(100,100); //start at 100, 100
+	context.lineTo(200,200); //end point at 200, 200
+	context.lineTo(300,100); //without lifting brush, go to next coord
+	context.lineTo(100,200);
+	context.lineTo(300,150);
+	context.lineTo(100,100);
+	context.moveTo(500,200); //moveTo picks up brush
+	context.lineTo(500,100);
+	context.strokeStyle = "#ff0000";
+	// context.stroke(); //fill path
+
+	//DRAW A CIRCLE
+	context.beginPath();
+	context.fillStyle = "#ffff00";
+	context.arc(375, 175, 50, 0.*Math.PI, 2*Math.PI); //first 2 # are center mark; the last math.PI is how complete the circle is(.5, 1, 1.5, 2)
+	// context.fill();
+
+	//RECTANGLE
+	context.beginPath();
+	context.rect(300,20, 100, 100); //(x, y, width, height)
+	// context.stroke();
+
+ var x = 300;
+ var y = 100;
+ var radius = 10;
+ var endArc = 2;
+ var r = 3;
+ var g = 3;
+ var b = 3;
+
+ function draw() {
+ 	//		circle
+ 	context.fillStyle = "#" + r + g + b; //dynamically build fill style
+ 	context.beginPath();
+ 	context.clearRect(0, 0, 1500, 500);
+ 	context.arc(x + 50, 400, 25, 0, endArc * Math.PI);
+ 	context.fill();
+ 	//		circle
+ 	context.fillStyle = "#" + r + g + b; //dynamically build fill style
+ 	context.moveTo(400,400);
+ 	context.arc(x + 150, 400, 25, 0, endArc * Math.PI);
+ 	context.fill();
+
+ 	//RECTANGLE
+ 	context.fillStyle = "#333";
+	context.moveTo(300,300);
+	context.rect(x,300, 200, 100); //(x, y, width, height)
+	context.fill();
+	//square
+	context.fillStyle = "#333";
+	context.moveTo(300,350);
+	context.rect(x + 200, 350, 50, 50); //(x, y, width, height)
+	context.fill();
+if (canvas.width <= 1500){
+ 	x += 4;
+ }
+ else if (canvas.width >= 1500) {
+ 	x -= 4;
+ }	
+ 	// y += 2;
+ 	// radius += 1;
+ 	// endArc += .1;
+ 	// r += 1;
+ 	// b += 2;
+ 	// g += 1;
+ }
+
+ var ball = setInterval(draw, 20);
+
+ draw();
+
+
+</script>
+
+
+
+
+</body>
+</html>

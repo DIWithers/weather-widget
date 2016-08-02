@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+	<meta charset="utf-8"/>
+
+<script src="jquery.min.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="scripts.js"></script>
+
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+<body>
+<!-- 	<form class="weather-form">   ******WEATHER WIDGET*********
+	<input type="text" name="city" class="city">
+	</form>
+
+	<canvas id="current-temp" height="500px" width="500px"> -->
+		<!-- The temp done canvas style -->
+	<!-- </canvas> -->
+
+	<div class="container">
+		<div class="col-sm-6 icon-wrapper">
+			
+				<div class="col-sm-12 current-temp"><h1>Current Temperature</h1></div>
+				<div class="col-sm-12">
+					<form class="weather-form">    
+						<input type="text" name="city" class="city" placeholder="Enter city or zip code">
+					</form>
+					<canvas id="current-temp" height="500px" width="500px">
+						<!-- The temp done canvas style -->
+					</canvas>
+				</div>
+			
+		</div>
+		<div class="col-sm-6">
+			<div class="header">
+				<h1>Current City: <span id="current-city"></span></h1>
+			</div>
+			<div class="detailed-weather">
+				<div id="weather-icon"> <!-- Icon goes here --></div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
