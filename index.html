@@ -30,11 +30,12 @@
 		<!-- The temp done canvas style -->
 	<!-- </canvas> -->
 
-	<div class="container">
-		<div class="col-sm-6 icon-wrapper">
+	<div class="container col-sm-6">
+		
+		<div class="col-sm-6 icon-wrapper"> <!-- current temp -->
 			
 				<div class="col-sm-12 current-temp"><h1>Current Temperature</h1></div>
-				<div class="col-sm-12">
+				<div class="col-sm-12 icon">
 					<form class="weather-form">    
 						<input type="text" name="city" class="city" placeholder="Enter city or zip code">
 					</form>
@@ -44,14 +45,23 @@
 				</div>
 			
 		</div>
-		<div class="col-sm-6">
+		<div class="col-sm-6"> <!-- current city header -->
 			<div class="header">
 				<h1>Current City: <span id="current-city"></span></h1>
 			</div>
 			<div class="detailed-weather">
 				<div id="weather-icon"> <!-- Icon goes here --></div>
+				<div class="report wait">Humidity:&nbsp<span id="humidity"></span>%</div>
+				<div class="report wait">High:&nbsp <span id="high-temp"></span></div>
+				<div class="report wait">Low:&nbsp<span id="low-temp"></span></div>
+				<div class="report wait">Currently:&nbsp <span id="current"></span></div>
+				<!-- <div class="report wait">Precipitation:&nbsp<span id="precipitation"></span>%</div> -->
+				<div class="report wait">Wind:&nbsp<span id="wind-speed"></span>&nbspmph</div>
+
 			</div>
 		</div>
+		<div class="col-sm-12 forecast">Test</div>
+	
 	</div>
 
 </body>

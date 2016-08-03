@@ -14,7 +14,7 @@ var currentTemp = 0;
 	var cityText = $(".city").val();
 	// Build the url from user input and api key
 	var url = "http://api.openweathermap.org/data/2.5/forecast/city?q="+cityText+",US&units=imperial&APPID=" + apiKey;
-
+	$(".report").removeClass("wait");
 	
 		$.getJSON(url, function(weatherData){
 			console.log(weatherData);
@@ -24,7 +24,7 @@ var currentTemp = 0;
 			currentCity = weatherData.city.name;
 			$("#current-city").html(currentCity);
 
-			weatherConditions = weatherData.cod;
+			weatherConditions = weatherData.list[0].weather[0].id;
 			weatherCategory = Math.floor(weatherConditions / 100);
 			console.log(weatherCategory);
 			switch(weatherCategory) {
@@ -40,9 +40,29 @@ var currentTemp = 0;
 				case 6:
 					$("#weather-icon").html("<img src='snow.jpeg'>");
 					break;
+				case 8:
+					$("#weather-icon").html("<img src='images/clear-sky-day.png'>");
 
 			}
+			humidity = weatherData.list[0].main.humidity;
+			$("#humidity").html(humidity);
 
+			high = weatherData.list[0].main.temp_max;
+			$("#high-temp").html(high);
+
+			low = weatherData.list[0].main.temp_min;
+			$("#low-temp").html(low);
+
+			current = weatherData.list[0].weather[0].description;
+			$("#current").html(current);
+
+			// precipitation;
+
+			windSpeed = weatherData.list[0].wind.speed;
+			$("#wind-speed").html(windSpeed);
+
+
+			
 			
 
 
