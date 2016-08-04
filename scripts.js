@@ -24,26 +24,43 @@ var currentTemp = 0;
 			currentCity = weatherData.city.name;
 			$("#current-city").html(currentCity);
 
-			weatherConditions = weatherData.list[0].weather[0].id;
-			weatherCategory = Math.floor(weatherConditions / 100);
-			console.log(weatherCategory);
-			switch(weatherCategory) {
-				case 2:
-					$("#weather-icon").html("<img src='images/thunderstorm-day.png'>");
-					break;
-				case 3:
-					$("#weather-icon").html("<img src='drizzle.png'>");
-					break;
-				case 5:
-					$("#weather-icon").html("<img src='rain.png'>");
-					break;
-				case 6:
-					$("#weather-icon").html("<img src='snow.jpeg'>");
-					break;
-				case 8:
-					$("#weather-icon").html("<img src='images/clear-sky-day.png'>");
+			weatherConditions = weatherData.list[0].weather[0].icon;
+			// weatherCategory = Math.floor(weatherConditions / 100);  //going to use entire # instead
 
-			}
+
+			$("#weather-icon").html("<img src='images/" + weatherConditions + ".png'>");
+
+			//icons for 5 day forcast
+			high1 = Math.ceil(weatherData.list[0].main.temp_max);
+			low1 = Math.ceil(weatherData.list[0].main.temp_min);
+			$(".hilo-1").html(high1 + "&#x2109" + low1 + "&#x2109");
+			high2 = Math.ceil(weatherData.list[5].main.temp_max);
+			low2 = Math.ceil(weatherData.list[5].main.temp_min);
+			$(".hilo-2").html(high2 + low2 + "&#x2109");
+
+			low = weatherData.list[0].main.temp_min;
+			
+
+			var wc1 = weatherData.list[0].weather[0].icon;
+			$("#day1-image").html("<img src='images/" + wc1 + ".png'>");
+			var wc2 = weatherData.list[5].weather[0].icon;
+			$("#day2-image").html("<img src='images/" + wc2 + ".png'>");
+			var wc3 = weatherData.list[13].weather[0].icon;
+			$("#day3-image").html("<img src='images/" + wc3 + ".png'>");
+			var wc4 = weatherData.list[21].weather[0].icon;
+			$("#day4-image").html("<img src='images/" + wc4 + ".png'>");
+			var wc5 = weatherData.list[29].weather[0].icon;
+			$("#day5-image").html("<img src='images/" + wc5 + ".png'>");
+			console.log(wc5);
+
+
+
+
+
+
+
+			console.log(weatherConditions);
+
 			humidity = weatherData.list[0].main.humidity;
 			$("#humidity").html(humidity);
 
@@ -61,6 +78,8 @@ var currentTemp = 0;
 			windSpeed = weatherData.list[0].wind.speed;
 			$("#wind-speed").html(windSpeed);
 
+			var d = new Date();
+			console.log(d);
 
 			
 			
